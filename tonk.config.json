@@ -1,0 +1,7 @@
+{
+  "name": "recipes",
+  "plan": {
+    "description": "The best place for me to store my personal recipes for me and all my friendspnpm run build && echo \"___TONK_CMD_FINISHED_0\""
+  },
+  "template": "react"
+}

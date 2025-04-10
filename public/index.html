@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="icons/apple.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Family Best Bites</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="A Tonk PWA application" />
+    <link rel="apple-touch-icon" href="icons/apple.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- Development-only script to clean up any existing service workers -->
+    <script>
+      // Only run this in development mode
+      if (
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"
+      ) {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker
+            .getRegistrations()
+            .then(function (registrations) {
+              for (let registration of registrations) {
+                registration.unregister();
+                console.log("DEV MODE: Unregistered service worker");
+              }
+            });
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+---
+description: Recipe store schema and usage patterns for recipe management
+globs: src/stores/recipeStore.ts, src/components/recipe/**/*
+alwaysApply: false
+---
+
+# Recipe Store
+
+## Data Schema
+- Use the `Recipe` interface for all recipe data
+- Include all required fields when creating recipes
+- Ingredients must have name, amount, and unit
+- Instructions must have stepNumber and text
+- Time values should be in minutes
+- Categories should be an array of strings
+- Use the defined difficulty levels: 'easy', 'medium', 'hard'
+
+## State Management
+- Use `useRecipeStore` hook to access the store
+- Separate UI concerns from data concerns
+- Keep recipe data immutable
+- Use IDs for all references between entities
+- Update dateModified whenever recipe data changes
+- Preserve data integrity in all operations
+
+## Synchronization
+- The store uses keepsync for real-time collaboration
+- Collection is synced with docId "recipe-collection"
+- Never modify the sync configuration
+- The store handles synchronization automatically
+- All changes are propagated to other clients in real-time
+
+## Actions
+- Use atomic actions for state updates
+- Group related state changes in a single action
+- Follow the action naming convention (verb + noun)
+- Keep actions focused on specific data operations
+- Use the helper selectors for common data access patterns
+- Handle errors gracefully within actions
+
+## TypeScript Usage
+- Leverage TypeScript for type safety
+- Use Omit<> type for create operations to ensure required fields
+- Use Partial<> type for update operations
+- Use explicit typing for all variables and function parameters
+- Follow the interface definitions for all data structures 

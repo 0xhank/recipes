@@ -1,0 +1,30 @@
+---
+description: Rules and conventions for React components in the recipes app
+globs:
+  - src/components/**/*.tsx
+  - src/views/**/*.tsx
+---
+
+# React Component Conventions
+
+## Views
+- Views represent top-level pages or distinct sections of the application.
+- Should primarily compose smaller components and handle routing/page-level state.
+- `RecipeSplash.tsx`: Displays the list of recipes, includes search/filter functionality.
+- `CreateRecipe.tsx`: Form for adding new recipes (currently uses LLM simulation).
+- `RecipeDetail.tsx`: Displays the full details of a single selected recipe.
+- `HelloWorld.tsx`: A sample/placeholder view.
+
+## Component Structure
+- Use functional components with TypeScript (`React.FC`).
+- Keep components focused on a single responsibility.
+- Use descriptive names for components and props.
+
+## State Management
+- Use the `useRecipeStore` (Zustand) for global recipe state.
+- Use `useState` for local component state (e.g., form inputs, UI toggles).
+
+## Styling
+- Use Tailwind CSS for styling.
+- Apply utility classes directly in the JSX.
+- Aim for responsive design using Tailwind's breakpoints (sm, md, lg). 

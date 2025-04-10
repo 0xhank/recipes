@@ -1,0 +1,21 @@
+---
+description: Color palette and theme conventions for the recipes app
+globs: src/**/*.{ts,tsx,css},tailwind.config.cjs,public/index.html
+---
+
+# App Theme
+
+## Colors
+- Use the defined Tailwind theme colors for consistency:
+  - `primary`: #E53E3E (Vibrant Red)
+  - `primary-dark`: #C53030 (Darker Red)
+  - `wash`: #FFF5F5 (Light Wash Red)
+  - `neutral`: #A0AEC0 (Cool Gray)
+- Apply `bg-wash` for general page backgrounds.
+- Use `text-primary` or `bg-primary` for key elements and calls to action.
+- Use `text-primary-dark` for hover/active states on primary elements.
+- Use `text-neutral` for secondary text or borders.
+
+## Typography
+- **Body Text:** Use the default sans-serif font (`font-sans`), which is configured to 'Lato'. Apply this implicitly or explicitly where needed.
+- **Titles/Headings:** Use the serif font (`font-serif`), configured to 'Playfair Display', for main page titles (`h1`) and section headings (`h2`). 
